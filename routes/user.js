@@ -8,6 +8,9 @@ const router = express.Router();
 router.get('/profile', auth, async (req, res) => {
   try {
     const user = await User.findById(req.userId);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
     res.json(user);
   } catch (err) {
     res.status(500).json({ message: 'Server error', error: err.message });
@@ -17,10 +20,10 @@ router.get('/profile', auth, async (req, res) => {
 // Update user profile
 router.put('/profile', auth, async (req, res) => {
   try {
-    const { name, profilePicture } = req.body;
+    const { name } = req.body;
     const user = await User.findByIdAndUpdate(
       req.userId,
-      { name, profilePicture, updatedAt: new Date() },
+      { name },
       { new: true }
     );
     res.json(user);
@@ -33,17 +36,20 @@ router.put('/profile', auth, async (req, res) => {
 router.get('/stats', auth, async (req, res) => {
   try {
     const user = await User.findById(req.userId);
-    
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
     const stats = {
       totalPoints: user.totalPoints,
       completedTopics: user.completedTopics.length,
       attemptedQuizzes: user.attemptedQuizzes.length,
       averageScore: user.attemptedQuizzes.length > 0
         ? Math.round(
-            user.attemptedQuizzes.reduce((sum, q) => sum + q.score, 0) / user.attemptedQuizzes.length
+            user.attemptedQuizzes.reduce((sum, quiz) => sum + quiz.score, 0) /
+            user.attemptedQuizzes.length
           )
         : 0,
-      completedTopics: user.completedTopics,
     };
 
     res.json(stats);
@@ -55,12 +61,12 @@ router.get('/stats', auth, async (req, res) => {
 // Get leaderboard
 router.get('/leaderboard', async (req, res) => {
   try {
-    const users = await User.find()
+    const leaderboard = await User.find()
       .sort({ totalPoints: -1 })
-      .limit(100)
-      .select('name totalPoints profilePicture completedTopics');
+      .limit(50)
+      .select('name totalPoints completedTopics');
 
-    res.json(users);
+    res.json(leaderboard);
   } catch (err) {
     res.status(500).json({ message: 'Server error', error: err.message });
   }

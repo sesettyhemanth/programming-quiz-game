@@ -10,46 +10,44 @@ const router = express.Router();
 router.post('/', auth, async (req, res) => {
   try {
     const { quizId, language, topic, answers, totalTime } = req.body;
-    const userId = req.userId;
 
-    const quiz = await Quiz.findById(quizId);
+    // Get quiz to get correct answers
+    const quiz = await Quiz.findOne({ language, topic });
     if (!quiz) {
       return res.status(404).json({ message: 'Quiz not found' });
     }
 
-    let correctAnswers = 0;
-    let incorrectAnswers = 0;
-
+    // Calculate score
+    let correctCount = 0;
     const processedAnswers = answers.map((answer, index) => {
       const question = quiz.questions[index];
-      const isCorrect = answer.userAnswer === question.correctAnswer;
-      
-      if (isCorrect) correctAnswers++;
-      else incorrectAnswers++;
+      const isCorrect = answer === question.correctAnswer;
+      if (isCorrect) correctCount++;
 
       return {
         questionId: question.id,
-        userAnswer: answer.userAnswer,
+        userAnswer: answer,
         correctAnswer: question.correctAnswer,
         isCorrect,
-        timeTaken: answer.timeTaken,
+        timeTaken: Math.floor(totalTime / quiz.questions.length),
       };
     });
 
-    const accuracy = (correctAnswers / quiz.totalQuestions) * 100;
-    const score = Math.round((correctAnswers / quiz.totalQuestions) * 100);
-    const passed = score >= quiz.passPercentage;
+    const accuracy = Math.round((correctCount / quiz.questions.length) * 100);
+    const passed = accuracy >= quiz.passPercentage;
+    const score = accuracy;
 
+    // Create result
     const result = new Result({
-      userId,
-      quizId,
+      userId: req.userId,
+      quizId: quiz._id,
       language,
       topic,
       answers: processedAnswers,
-      totalQuestions: quiz.totalQuestions,
-      correctAnswers,
-      incorrectAnswers,
-      accuracy: Math.round(accuracy),
+      totalQuestions: quiz.questions.length,
+      correctAnswers: correctCount,
+      incorrectAnswers: quiz.questions.length - correctCount,
+      accuracy,
       score,
       totalTime,
       passed,
@@ -57,41 +55,43 @@ router.post('/', auth, async (req, res) => {
 
     await result.save();
 
-    // Update user stats
-    const user = await User.findById(userId);
-    const pointsEarned = score;
-    user.totalPoints += pointsEarned;
+    // Update user statistics
+    const user = await User.findById(req.userId);
+    user.totalPoints += score;
 
-    // Check if topic is completed
-    const topicCompleted = user.completedTopics.find(
-      t => t.language === language && t.topic === topic
-    );
-    
-    if (!topicCompleted && passed) {
-      user.completedTopics.push({
-        language,
-        topic,
-        completedAt: new Date(),
-        score,
-      });
-    }
-
+    // Add to attempted quizzes
     user.attemptedQuizzes.push({
-      quizId,
+      quizId: quiz._id,
       language,
       topic,
       score,
-      totalQuestions: quiz.totalQuestions,
-      correctAnswers,
+      totalQuestions: quiz.questions.length,
+      correctAnswers: correctCount,
       attemptedAt: new Date(),
     });
+
+    // Add to completed topics if passed
+    if (passed) {
+      const alreadyCompleted = user.completedTopics.some(
+        (t) => t.language === language && t.topic === topic
+      );
+      if (!alreadyCompleted) {
+        user.completedTopics.push({
+          language,
+          topic,
+          completedAt: new Date(),
+          score,
+        });
+      }
+    }
 
     await user.save();
 
     res.status(201).json({
+      message: 'Quiz submitted successfully',
       result: {
         ...result.toObject(),
-        pointsEarned,
+        passed,
       },
     });
   } catch (err) {
@@ -99,33 +99,37 @@ router.post('/', auth, async (req, res) => {
   }
 });
 
-// Get user results
-router.get('/user/history', auth, async (req, res) => {
+// Get specific result
+router.get('/:resultId', async (req, res) => {
   try {
-    const results = await Result.find({ userId: req.userId })
-      .sort({ completedAt: -1 })
-      .populate('quizId');
-    
-    res.json(results);
+    const result = await Result.findById(req.params.resultId);
+    if (!result) {
+      return res.status(404).json({ message: 'Result not found' });
+    }
+    res.json(result);
   } catch (err) {
     res.status(500).json({ message: 'Server error', error: err.message });
   }
 });
 
-// Get result by ID
-router.get('/:resultId', auth, async (req, res) => {
+// Get user's quiz history
+router.get('/user/history', auth, async (req, res) => {
   try {
-    const result = await Result.findById(req.params.resultId);
-    
-    if (!result) {
-      return res.status(404).json({ message: 'Result not found' });
-    }
+    const results = await Result.find({ userId: req.userId })
+      .sort({ completedAt: -1 })
+      .limit(10);
 
-    if (result.userId.toString() !== req.userId) {
-      return res.status(403).json({ message: 'Unauthorized' });
-    }
+    const formattedResults = results.map((r) => ({
+      language: r.language,
+      topic: r.topic,
+      score: r.score,
+      totalQuestions: r.totalQuestions,
+      correctAnswers: r.correctAnswers,
+      passed: r.passed,
+      completedAt: r.completedAt,
+    }));
 
-    res.json(result);
+    res.json(formattedResults);
   } catch (err) {
     res.status(500).json({ message: 'Server error', error: err.message });
   }

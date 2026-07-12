@@ -1,7 +1,5 @@
-// Complete Quiz Data for all programming languages and topics
-
 const quizData = {
-  'HTML': {
+  HTML: {
     topics: [
       {
         name: 'HTML Basics',
@@ -9,173 +7,188 @@ const quizData = {
           {
             id: '1',
             question: 'What does HTML stand for?',
-            options: ['Hyper Text Markup Language', 'High Tech Modern Language', 'Home Tool Markup Language', 'Hyperlinks and Text Markup Language'],
+            options: [
+              'Hyper Text Markup Language',
+              'High Tech Modern Language',
+              'Home Tool Markup Language',
+              'Hyperlinks and Text Markup Language'
+            ],
             correctAnswer: 'Hyper Text Markup Language',
-            explanation: 'HTML stands for Hyper Text Markup Language, which is the standard markup language for creating web pages.',
-            difficulty: 'easy',
+            explanation: 'HTML stands for Hyper Text Markup Language. It is used to create web pages and web applications.',
+            difficulty: 'easy'
           },
           {
             id: '2',
             question: 'Which tag is used for the largest heading?',
-            options: ['<h1>', '<h6>', '<heading>', '<head>'],
+            options: ['<h6>', '<h1>', '<heading>', '<head>'],
             correctAnswer: '<h1>',
-            explanation: 'The <h1> tag is used for the largest heading in HTML.',
-            difficulty: 'easy',
+            explanation: '<h1> is the largest heading tag, <h6> is the smallest. Use <h1> for main titles.',
+            difficulty: 'easy'
           },
           {
             id: '3',
-            question: 'What is the correct way to add a comment in HTML?',
-            options: ['<!-- comment -->', '// comment', '/* comment */', '# comment'],
-            correctAnswer: '<!-- comment -->',
-            explanation: 'HTML comments are written using <!-- comment --> syntax.',
-            difficulty: 'easy',
+            question: 'What is the correct way to create a hyperlink?',
+            options: [
+              '<a href="url">Link Text</a>',
+              '<link href="url">Link Text</link>',
+              '<a url="url">Link Text</a>',
+              '<href>Link Text</href>'
+            ],
+            correctAnswer: '<a href="url">Link Text</a>',
+            explanation: 'The <a> tag with href attribute is used to create hyperlinks in HTML.',
+            difficulty: 'easy'
           },
           {
             id: '4',
-            question: 'Which attribute is used to define inline styles?',
-            options: ['style', 'css', 'class', 'id'],
-            correctAnswer: 'style',
-            explanation: 'The style attribute is used to define inline CSS styles for an element.',
-            difficulty: 'easy',
+            question: 'Which tag is used to define an image?',
+            options: ['<img>', '<image>', '<picture>', '<photo>'],
+            correctAnswer: '<img>',
+            explanation: 'The <img> tag is a self-closing tag used to embed images in HTML documents.',
+            difficulty: 'easy'
           },
           {
             id: '5',
-            question: 'What is the correct HTML element for inserting a line break?',
-            options: ['<br>', '<break>', '<lb>', '<line>'],
-            correctAnswer: '<br>',
-            explanation: 'The <br> tag is used to insert a single line break in HTML.',
-            difficulty: 'easy',
+            question: 'What is the purpose of the <meta> tag?',
+            options: [
+              'Provides metadata about the HTML document',
+              'Creates a meta link',
+              'Defines the main content',
+              'Creates metadata links'
+            ],
+            correctAnswer: 'Provides metadata about the HTML document',
+            explanation: 'The <meta> tag provides metadata that is not displayed on the page but helps browsers and search engines understand the page.',
+            difficulty: 'medium'
           },
           {
             id: '6',
-            question: 'Which tag is used to define a list item?',
-            options: ['<li>', '<ul>', '<ol>', '<list>'],
-            correctAnswer: '<li>',
-            explanation: 'The <li> tag defines a list item in either ordered or unordered lists.',
-            difficulty: 'easy',
+            question: 'Which attribute specifies the character encoding in HTML?',
+            options: [
+              'charset',
+              'encoding',
+              'language',
+              'character'
+            ],
+            correctAnswer: 'charset',
+            explanation: 'The charset attribute in the <meta> tag specifies the character encoding for the HTML document (usually UTF-8).',
+            difficulty: 'medium'
           },
           {
             id: '7',
-            question: 'What does the <meta> tag do?',
-            options: ['Specifies metadata about HTML document', 'Creates metadata variables', 'Links to external stylesheets', 'Defines main content'],
-            correctAnswer: 'Specifies metadata about HTML document',
-            explanation: 'The <meta> tag provides metadata about the HTML document, like character set, viewport settings, etc.',
-            difficulty: 'medium',
+            question: 'What is the correct HTML structure?',
+            options: [
+              '<!DOCTYPE html><html><head></head><body></body></html>',
+              '<html><body></body></html>',
+              '<!DOCTYPE><body></body>',
+              '<head></head><body></body>'
+            ],
+            correctAnswer: '<!DOCTYPE html><html><head></head><body></body></html>',
+            explanation: 'A proper HTML document should include DOCTYPE declaration, html, head, and body tags in the correct order.',
+            difficulty: 'medium'
           },
           {
             id: '8',
-            question: 'Which tag is used for a hyperlink?',
-            options: ['<a>', '<link>', '<href>', '<url>'],
-            correctAnswer: '<a>',
-            explanation: 'The <a> tag is used to define a hyperlink in HTML.',
-            difficulty: 'easy',
+            question: 'Which tag defines a table row?',
+            options: ['<tr>', '<td>', '<table>', '<th>'],
+            correctAnswer: '<tr>',
+            explanation: 'The <tr> tag defines a table row. <td> is for data cells and <th> is for header cells.',
+            difficulty: 'easy'
           },
           {
             id: '9',
-            question: 'What is the correct HTML element for the main content?',
-            options: ['<main>', '<content>', '<article>', '<section>'],
-            correctAnswer: '<main>',
-            explanation: 'The <main> tag specifies the main content of a document.',
-            difficulty: 'medium',
+            question: 'What does the <strong> tag do?',
+            options: [
+              'Makes text bold and indicates strong importance',
+              'Only makes text larger',
+              'Only makes text bold',
+              'Underlines the text'
+            ],
+            correctAnswer: 'Makes text bold and indicates strong importance',
+            explanation: '<strong> tag not only bolds text but also semantically indicates that the content is of strong importance.',
+            difficulty: 'medium'
           },
           {
             id: '10',
-            question: 'Which attribute specifies an alternative text for an image?',
-            options: ['alt', 'text', 'title', 'description'],
-            correctAnswer: 'alt',
-            explanation: 'The alt attribute provides alternative text for an image if it cannot be displayed.',
-            difficulty: 'easy',
-          },
-        ],
+            question: 'Which tag is used to create a list with bullet points?',
+            options: ['<ul>', '<ol>', '<li>', '<dl>'],
+            correctAnswer: '<ul>',
+            explanation: '<ul> creates an unordered list with bullet points. <ol> creates ordered (numbered) lists.',
+            difficulty: 'easy'
+          }
+        ]
       },
       {
         name: 'Forms & Input',
         questions: [
           {
             id: '1',
-            question: 'What is the correct HTML element for creating a form?',
-            options: ['<form>', '<input>', '<field>', '<data>'],
-            correctAnswer: '<form>',
-            explanation: 'The <form> tag is used to create an HTML form for user input.',
-            difficulty: 'easy',
+            question: 'What is the correct way to create a form?',
+            options: [
+              '<form action="submit.php" method="POST"></form>',
+              '<input form></input>',
+              '<submit></submit>',
+              '<data></data>'
+            ],
+            correctAnswer: '<form action="submit.php" method="POST"></form>',
+            explanation: 'The <form> tag with action and method attributes is used to create forms in HTML.',
+            difficulty: 'easy'
           },
           {
             id: '2',
-            question: 'Which attribute specifies where form data should be sent?',
-            options: ['action', 'method', 'target', 'submit'],
-            correctAnswer: 'action',
-            explanation: 'The action attribute specifies the URL of the server page that will process the form data.',
-            difficulty: 'easy',
+            question: 'What input type is used for email validation?',
+            options: [
+              'email',
+              'mail',
+              'text',
+              'validate'
+            ],
+            correctAnswer: 'email',
+            explanation: 'The input type "email" provides built-in email validation in HTML5.',
+            difficulty: 'easy'
           },
           {
             id: '3',
-            question: 'What does the <label> tag do?',
-            options: ['Defines a label for form elements', 'Creates a text label', 'Adds text styling', 'Creates headers'],
-            correctAnswer: 'Defines a label for form elements',
-            explanation: 'The <label> tag defines a label for an input element or other form control.',
-            difficulty: 'easy',
+            question: 'Which attribute makes an input field required?',
+            options: [
+              'required',
+              'mandatory',
+              'needed',
+              'must-fill'
+            ],
+            correctAnswer: 'required',
+            explanation: 'The "required" attribute makes an input field mandatory before form submission.',
+            difficulty: 'easy'
           },
           {
             id: '4',
-            question: 'Which input type is used for password fields?',
-            options: ['<input type="password">', '<input type="secret">', '<input type="hidden">', '<input type="secure">'],
-            correctAnswer: '<input type="password">',
-            explanation: 'The password type input field masks the characters as they are typed.',
-            difficulty: 'easy',
+            question: 'What is the difference between <input type="text"> and <textarea>?',
+            options: [
+              'textarea allows multiple lines of text',
+              'input type text is for numbers',
+              'textarea is deprecated',
+              'No difference'
+            ],
+            correctAnswer: 'textarea allows multiple lines of text',
+            explanation: '<textarea> allows users to enter multiple lines of text, while input type="text" is for single-line input.',
+            difficulty: 'medium'
           },
           {
             id: '5',
-            question: 'What is the correct input type for email validation?',
-            options: ['<input type="email">', '<input type="mail">', '<input type="e-mail">', '<input type="text">'],
-            correctAnswer: '<input type="email">',
-            explanation: 'The email type input provides built-in validation for email addresses.',
-            difficulty: 'easy',
-          },
-          {
-            id: '6',
-            question: 'Which attribute makes a form field required?',
-            options: ['required', 'mandatory', 'necessary', 'compulsory'],
-            correctAnswer: 'required',
-            explanation: 'The required attribute specifies that an input field must be filled before submitting the form.',
-            difficulty: 'easy',
-          },
-          {
-            id: '7',
-            question: 'What is the <textarea> tag used for?',
-            options: ['Multi-line text input', 'Single-line text input', 'Password input', 'Number input'],
-            correctAnswer: 'Multi-line text input',
-            explanation: 'The <textarea> tag defines a multi-line text input control.',
-            difficulty: 'easy',
-          },
-          {
-            id: '8',
-            question: 'Which input type creates a radio button?',
-            options: ['<input type="radio">', '<input type="button">', '<input type="checkbox">', '<input type="circle">'],
-            correctAnswer: '<input type="radio">',
-            explanation: 'The radio type input creates radio buttons where only one option can be selected.',
-            difficulty: 'easy',
-          },
-          {
-            id: '9',
-            question: 'What does the <select> tag do?',
-            options: ['Creates a dropdown list', 'Selects form elements', 'Chooses colors', 'Selects text'],
-            correctAnswer: 'Creates a dropdown list',
-            explanation: 'The <select> tag creates a dropdown list with predefined options.',
-            difficulty: 'easy',
-          },
-          {
-            id: '10',
-            question: 'Which tag is used to define options in a dropdown?',
-            options: ['<option>', '<item>', '<choice>', '<select>'],
-            correctAnswer: '<option>',
-            explanation: 'The <option> tag defines an option in a dropdown list.',
-            difficulty: 'easy',
-          },
-        ],
-      },
-    ],
+            question: 'What does the <label> tag do?',
+            options: [
+              'Associates text with form inputs',
+              'Creates a heading',
+              'Defines a table',
+              'Creates a border'
+            ],
+            correctAnswer: 'Associates text with form inputs',
+            explanation: 'The <label> tag associates descriptive text with form inputs and improves accessibility.',
+            difficulty: 'medium'
+          }
+        ]
+      }
+    ]
   },
-  'CSS': {
+  CSS: {
     topics: [
       {
         name: 'CSS Basics',
@@ -183,84 +196,69 @@ const quizData = {
           {
             id: '1',
             question: 'What does CSS stand for?',
-            options: ['Cascading Style Sheets', 'Computer Style Sheets', 'Colorful Style Sheets', 'Creative Style Sheets'],
+            options: [
+              'Cascading Style Sheets',
+              'Computer Style Sheets',
+              'Colorful Style Sheets',
+              'Creative Style Sheets'
+            ],
             correctAnswer: 'Cascading Style Sheets',
-            explanation: 'CSS stands for Cascading Style Sheets, used for styling HTML elements.',
-            difficulty: 'easy',
+            explanation: 'CSS stands for Cascading Style Sheets and is used to style HTML elements.',
+            difficulty: 'easy'
           },
           {
             id: '2',
-            question: 'Which is the correct CSS syntax for selecting all <p> elements?',
-            options: ['p { }', 'p[ ]', '<p>{ }', '[p]{ }'],
-            correctAnswer: 'p { }',
-            explanation: 'The correct syntax for selecting an element in CSS is: element { }',
-            difficulty: 'easy',
+            question: 'Which is the correct CSS syntax?',
+            options: [
+              'selector { property: value; }',
+              'selector { property = value }',
+              'selector [ property: value ]',
+              'selector ( property: value )'
+            ],
+            correctAnswer: 'selector { property: value; }',
+            explanation: 'CSS syntax consists of selectors followed by a declaration block with property-value pairs.',
+            difficulty: 'easy'
           },
           {
             id: '3',
-            question: 'How do you add a background color to an element?',
-            options: ['background-color: red;', 'bgcolor: red;', 'background: red;', 'color-background: red;'],
-            correctAnswer: 'background-color: red;',
-            explanation: 'The background-color property is used to set the background color of an element.',
-            difficulty: 'easy',
+            question: 'What is the highest specificity in CSS?',
+            options: [
+              'Inline styles',
+              'Class selectors',
+              'Element selectors',
+              'ID selectors'
+            ],
+            correctAnswer: 'Inline styles',
+            explanation: 'Inline styles have the highest specificity, followed by IDs, classes, and element selectors.',
+            difficulty: 'medium'
           },
           {
             id: '4',
-            question: 'Which property is used to change the text color?',
-            options: ['color', 'text-color', 'font-color', 'foreground-color'],
-            correctAnswer: 'color',
-            explanation: 'The color property is used to set the text color of an element.',
-            difficulty: 'easy',
+            question: 'Which property is used to change the background color?',
+            options: [
+              'background-color',
+              'color',
+              'bg-color',
+              'background'
+            ],
+            correctAnswer: 'background-color',
+            explanation: 'The background-color property changes the background color of an element.',
+            difficulty: 'easy'
           },
           {
             id: '5',
-            question: 'How do you select an element with id "demo"?',
-            options: ['#demo { }', '.demo { }', 'demo { }', '*demo { }'],
-            correctAnswer: '#demo { }',
-            explanation: 'The # symbol is used to select an element by its id attribute.',
-            difficulty: 'easy',
-          },
-          {
-            id: '6',
-            question: 'How do you select elements with class "intro"?',
-            options: ['.intro { }', '#intro { }', 'intro { }', '*intro { }'],
-            correctAnswer: '.intro { }',
-            explanation: 'The . symbol is used to select elements by their class attribute.',
-            difficulty: 'easy',
-          },
-          {
-            id: '7',
-            question: 'Which property controls the text size?',
-            options: ['font-size', 'text-size', 'size', 'font-height'],
-            correctAnswer: 'font-size',
-            explanation: 'The font-size property sets the size of the text.',
-            difficulty: 'easy',
-          },
-          {
-            id: '8',
-            question: 'How do you make text bold?',
-            options: ['font-weight: bold;', 'text-weight: bold;', 'bold: true;', 'font: bold;'],
-            correctAnswer: 'font-weight: bold;',
-            explanation: 'The font-weight property with value "bold" makes text bold.',
-            difficulty: 'easy',
-          },
-          {
-            id: '9',
-            question: 'Which property adds space inside an element?',
-            options: ['padding', 'margin', 'spacing', 'indent'],
-            correctAnswer: 'padding',
-            explanation: 'The padding property adds space inside an element\'s border.',
-            difficulty: 'easy',
-          },
-          {
-            id: '10',
-            question: 'Which property adds space outside an element?',
-            options: ['margin', 'padding', 'spacing', 'offset'],
-            correctAnswer: 'margin',
-            explanation: 'The margin property adds space outside an element\'s border.',
-            difficulty: 'easy',
-          },
-        ],
+            question: 'What does the box model consist of?',
+            options: [
+              'Content, Padding, Border, Margin',
+              'Width, Height, Size, Space',
+              'Color, Style, Weight, Shadow',
+              'Display, Position, Float, Clear'
+            ],
+            correctAnswer: 'Content, Padding, Border, Margin',
+            explanation: 'The CSS box model includes content, padding (inside), border, and margin (outside).',
+            difficulty: 'medium'
+          }
+        ]
       },
       {
         name: 'Layouts & Flexbox',
@@ -268,173 +266,138 @@ const quizData = {
           {
             id: '1',
             question: 'What is Flexbox used for?',
-            options: ['Creating flexible layouts', 'Storing data', 'Animating elements', 'Handling events'],
-            correctAnswer: 'Creating flexible layouts',
-            explanation: 'Flexbox is a CSS layout method for arranging items in rows or columns flexibly.',
-            difficulty: 'medium',
+            options: [
+              'Creating flexible one-dimensional layouts',
+              'Creating 3D animations',
+              'Styling fonts',
+              'Creating databases'
+            ],
+            correctAnswer: 'Creating flexible one-dimensional layouts',
+            explanation: 'Flexbox is a CSS layout model for creating flexible, one-dimensional layouts with containers and items.',
+            difficulty: 'easy'
           },
           {
             id: '2',
-            question: 'How do you enable Flexbox on a container?',
-            options: ['display: flex;', 'display: flexbox;', 'flex: true;', 'layout: flex;'],
-            correctAnswer: 'display: flex;',
-            explanation: 'The display: flex; property enables Flexbox layout on a container.',
-            difficulty: 'medium',
+            question: 'Which property turns an element into a flex container?',
+            options: [
+              'display: flex',
+              'flex: container',
+              'layout: flex',
+              'type: flex'
+            ],
+            correctAnswer: 'display: flex',
+            explanation: 'The display: flex property turns an element into a flex container.',
+            difficulty: 'easy'
           },
           {
             id: '3',
-            question: 'Which property aligns flex items horizontally?',
-            options: ['justify-content', 'align-items', 'align-content', 'flex-direction'],
-            correctAnswer: 'justify-content',
-            explanation: 'The justify-content property aligns flex items along the main axis (horizontally).',
-            difficulty: 'medium',
+            question: 'What does justify-content do in Flexbox?',
+            options: [
+              'Aligns items horizontally',
+              'Aligns items vertically',
+              'Changes font weight',
+              'Increases spacing'
+            ],
+            correctAnswer: 'Aligns items horizontally',
+            explanation: 'justify-content aligns flex items along the main axis (horizontally by default).',
+            difficulty: 'medium'
           },
           {
             id: '4',
-            question: 'What does align-items do?',
-            options: ['Aligns items vertically', 'Aligns items horizontally', 'Positions items absolutely', 'Rotates items'],
+            question: 'What does align-items do in Flexbox?',
+            options: [
+              'Aligns items vertically',
+              'Aligns items horizontally',
+              'Changes the direction',
+              'Wraps items'
+            ],
             correctAnswer: 'Aligns items vertically',
-            explanation: 'The align-items property aligns flex items along the cross axis (vertically).',
-            difficulty: 'medium',
+            explanation: 'align-items aligns flex items along the cross axis (vertically by default).',
+            difficulty: 'medium'
           },
           {
             id: '5',
-            question: 'How do you change the direction of flex items to column?',
-            options: ['flex-direction: column;', 'flex-flow: column;', 'direction: column;', 'layout-direction: column;'],
-            correctAnswer: 'flex-direction: column;',
-            explanation: 'The flex-direction property with value "column" stacks flex items vertically.',
-            difficulty: 'medium',
-          },
-          {
-            id: '6',
             question: 'What is CSS Grid used for?',
-            options: ['Creating two-dimensional layouts', 'Storing tabular data', 'Creating animations', 'Managing fonts'],
+            options: [
+              'Creating two-dimensional layouts',
+              'Creating animations',
+              'Styling text',
+              'Creating forms'
+            ],
             correctAnswer: 'Creating two-dimensional layouts',
-            explanation: 'CSS Grid is a layout system for creating two-dimensional row and column layouts.',
-            difficulty: 'medium',
-          },
-          {
-            id: '7',
-            question: 'How do you enable CSS Grid on a container?',
-            options: ['display: grid;', 'display: grid-layout;', 'grid: true;', 'layout: grid;'],
-            correctAnswer: 'display: grid;',
-            explanation: 'The display: grid; property enables CSS Grid layout on a container.',
-            difficulty: 'medium',
-          },
-          {
-            id: '8',
-            question: 'Which property defines the number of columns in a grid?',
-            options: ['grid-template-columns', 'grid-columns', 'column-count', 'columns'],
-            correctAnswer: 'grid-template-columns',
-            explanation: 'The grid-template-columns property defines the columns of the grid.',
-            difficulty: 'medium',
-          },
-          {
-            id: '9',
-            question: 'What is the default value of flex-wrap?',
-            options: ['nowrap', 'wrap', 'wrap-reverse', 'initial'],
-            correctAnswer: 'nowrap',
-            explanation: 'By default, flex items do not wrap and are displayed in a single line.',
-            difficulty: 'medium',
-          },
-          {
-            id: '10',
-            question: 'How do you make a flex item grow to fill available space?',
-            options: ['flex-grow: 1;', 'flex: 1;', 'grow: 1;', 'flex-expand: 1;'],
-            correctAnswer: 'flex-grow: 1;',
-            explanation: 'The flex-grow property specifies how much a flex item will grow relative to other items.',
-            difficulty: 'medium',
-          },
-        ],
-      },
-    ],
+            explanation: 'CSS Grid is used for creating two-dimensional layouts with rows and columns.',
+            difficulty: 'medium'
+          }
+        ]
+      }
+    ]
   },
-  'JavaScript': {
+  JavaScript: {
     topics: [
       {
         name: 'JS Basics',
         questions: [
           {
             id: '1',
-            question: 'What is JavaScript primarily used for?',
-            options: ['Making web pages interactive', 'Creating databases', 'Managing servers', 'Building operating systems'],
-            correctAnswer: 'Making web pages interactive',
-            explanation: 'JavaScript is used to make web pages interactive and dynamic.',
-            difficulty: 'easy',
+            question: 'Which keyword is used to declare a variable in JavaScript?',
+            options: ['let, const, var', 'var, variable, let', 'declare, var, const', 'let, var, variable'],
+            correctAnswer: 'let, const, var',
+            explanation: 'In JavaScript, you can declare variables using var (old way), let, and const (modern ways).',
+            difficulty: 'easy'
           },
           {
             id: '2',
-            question: 'How do you declare a variable in JavaScript?',
-            options: ['var, let, const', 'variable', 'v, l, c', 'declare'],
-            correctAnswer: 'var, let, const',
-            explanation: 'In JavaScript, you can declare variables using var, let, or const keywords.',
-            difficulty: 'easy',
+            question: 'What is the difference between == and ===?',
+            options: [
+              '=== checks both value and type, == only checks value',
+              '== is faster than ===',
+              'They are the same',
+              '== checks type, === checks value'
+            ],
+            correctAnswer: '=== checks both value and type, == only checks value',
+            explanation: '=== is strict equality (no type conversion), == is loose equality (with type conversion).',
+            difficulty: 'medium'
           },
           {
             id: '3',
-            question: 'What is the difference between let and const?',
-            options: ['const cannot be reassigned, let can', 'let cannot be reassigned, const can', 'They are the same', 'const is faster'],
-            correctAnswer: 'const cannot be reassigned, let can',
-            explanation: 'const declares a constant variable that cannot be reassigned, while let can be reassigned.',
-            difficulty: 'medium',
+            question: 'What does console.log() do?',
+            options: [
+              'Prints output to the console',
+              'Creates a log file',
+              'Logs in to a system',
+              'Displays an alert'
+            ],
+            correctAnswer: 'Prints output to the console',
+            explanation: 'console.log() is used to print values to the browser console for debugging.',
+            difficulty: 'easy'
           },
           {
             id: '4',
-            question: 'Which keyword is used to create a function?',
-            options: ['function', 'func', 'fun', 'define'],
-            correctAnswer: 'function',
-            explanation: 'The function keyword is used to define a function in JavaScript.',
-            difficulty: 'easy',
+            question: 'Which of these is a primitive data type in JavaScript?',
+            options: [
+              'String, Number, Boolean',
+              'Object, Array, Function',
+              'Class, Interface, Module',
+              'Window, Document, Navigator'
+            ],
+            correctAnswer: 'String, Number, Boolean',
+            explanation: 'Primitive types in JavaScript are: String, Number, Boolean, undefined, null, Symbol, BigInt.',
+            difficulty: 'medium'
           },
           {
             id: '5',
-            question: 'What is an arrow function?',
-            options: ['() => {}', '=> ()', 'function =>', '() ='],
-            correctAnswer: '() => {}',
-            explanation: 'Arrow functions are a concise way to write functions using the => syntax.',
-            difficulty: 'medium',
-          },
-          {
-            id: '6',
-            question: 'What is the correct way to check if a variable is undefined?',
-            options: ['typeof variable === "undefined"', 'variable == undefined', 'variable === null', 'is variable undefined'],
-            correctAnswer: 'typeof variable === "undefined"',
-            explanation: 'You can use typeof to check if a variable is undefined.',
-            difficulty: 'medium',
-          },
-          {
-            id: '7',
-            question: 'What does the return keyword do?',
-            options: ['Returns a value from a function', 'Goes back to previous page', 'Cancels execution', 'Restarts the code'],
-            correctAnswer: 'Returns a value from a function',
-            explanation: 'The return keyword exits the function and returns a value to the caller.',
-            difficulty: 'easy',
-          },
-          {
-            id: '8',
-            question: 'How do you comment a single line in JavaScript?',
-            options: ['//', '/*', '#', '--'],
-            correctAnswer: '//',
-            explanation: 'Double forward slashes // are used for single-line comments in JavaScript.',
-            difficulty: 'easy',
-          },
-          {
-            id: '9',
-            question: 'What is a template literal?',
-            options: ['A string using backticks with ${} for variables', 'A string using quotes', 'A function template', 'An HTML template'],
-            correctAnswer: 'A string using backticks with ${} for variables',
-            explanation: 'Template literals use backticks and allow you to embed expressions with ${}.',
-            difficulty: 'medium',
-          },
-          {
-            id: '10',
-            question: 'What is console.log() used for?',
-            options: ['Printing to the console', 'Logging errors', 'Storing data', 'Creating variables'],
-            correctAnswer: 'Printing to the console',
-            explanation: 'console.log() outputs messages to the browser console for debugging.',
-            difficulty: 'easy',
-          },
-        ],
+            question: 'What is hoisting in JavaScript?',
+            options: [
+              'Moving declarations to the top of their scope before execution',
+              'Lifting elements on a page',
+              'Creating new scopes',
+              'Deleting variables'
+            ],
+            correctAnswer: 'Moving declarations to the top of their scope before execution',
+            explanation: 'Hoisting is JavaScripts behavior of moving declarations to the top of their scope.',
+            difficulty: 'hard'
+          }
+        ]
       },
       {
         name: 'Arrays & Objects',
@@ -442,173 +405,143 @@ const quizData = {
           {
             id: '1',
             question: 'How do you create an array in JavaScript?',
-            options: ['[1, 2, 3]', '{1, 2, 3}', '(1, 2, 3)', '<1, 2, 3>'],
-            correctAnswer: '[1, 2, 3]',
-            explanation: 'Arrays in JavaScript are created using square brackets [].',
-            difficulty: 'easy',
+            options: [
+              'let arr = [1, 2, 3]; or let arr = new Array();',
+              'let arr = {1, 2, 3};',
+              'let arr = (1, 2, 3);',
+              'let arr = <1, 2, 3>;'
+            ],
+            correctAnswer: 'let arr = [1, 2, 3]; or let arr = new Array();',
+            explanation: 'Arrays can be created using array literal notation [] or the Array constructor.',
+            difficulty: 'easy'
           },
           {
             id: '2',
-            question: 'What does the push() method do?',
-            options: ['Adds an element to the end of array', 'Removes the first element', 'Removes the last element', 'Sorts the array'],
-            correctAnswer: 'Adds an element to the end of array',
-            explanation: 'The push() method adds one or more elements to the end of an array.',
-            difficulty: 'easy',
+            question: 'What does the map() method do?',
+            options: [
+              'Creates a new array by transforming each element',
+              'Finds an element in an array',
+              'Removes elements from an array',
+              'Sorts an array'
+            ],
+            correctAnswer: 'Creates a new array by transforming each element',
+            explanation: 'The map() method creates a new array by applying a function to each element of the original array.',
+            difficulty: 'medium'
           },
           {
             id: '3',
-            question: 'What does the pop() method do?',
-            options: ['Removes the last element from array', 'Adds an element', 'Sorts the array', 'Clears the array'],
-            correctAnswer: 'Removes the last element from array',
-            explanation: 'The pop() method removes and returns the last element from an array.',
-            difficulty: 'easy',
+            question: 'How do you access a property of an object?',
+            options: [
+              'obj.property or obj["property"]',
+              'obj->property',
+              'obj:property',
+              'obj#property'
+            ],
+            correctAnswer: 'obj.property or obj["property"]',
+            explanation: 'Object properties can be accessed using dot notation or bracket notation.',
+            difficulty: 'easy'
           },
           {
             id: '4',
-            question: 'How do you create an object in JavaScript?',
-            options: ['{key: value}', '[key: value]', '(key: value)', '<key: value>'],
-            correctAnswer: '{key: value}',
-            explanation: 'Objects in JavaScript are created using curly braces {} with key-value pairs.',
-            difficulty: 'easy',
+            question: 'What does the filter() method do?',
+            options: [
+              'Creates a new array with elements that pass a test',
+              'Changes the original array',
+              'Finds a single element',
+              'Sorts the array'
+            ],
+            correctAnswer: 'Creates a new array with elements that pass a test',
+            explanation: 'filter() creates a new array containing only elements that satisfy the provided function.',
+            difficulty: 'medium'
           },
           {
             id: '5',
-            question: 'How do you access an object property?',
-            options: ['object.property or object["property"]', 'object[property]', 'object->property', 'object::property'],
-            correctAnswer: 'object.property or object["property"]',
-            explanation: 'You can access object properties using dot notation or bracket notation.',
-            difficulty: 'easy',
-          },
-          {
-            id: '6',
-            question: 'What is destructuring?',
-            options: ['Unpacking variables from objects/arrays', 'Breaking code', 'Deleting properties', 'Organizing code'],
-            correctAnswer: 'Unpacking variables from objects/arrays',
-            explanation: 'Destructuring allows you to unpack values from objects or arrays into distinct variables.',
-            difficulty: 'medium',
-          },
-          {
-            id: '7',
-            question: 'What does the map() method do?',
-            options: ['Creates a new array by transforming each element', 'Creates a map object', 'Maps variables', 'Stores location data'],
-            correctAnswer: 'Creates a new array by transforming each element',
-            explanation: 'The map() method creates a new array with results of calling a function on each element.',
-            difficulty: 'medium',
-          },
-          {
-            id: '8',
-            question: 'What does the filter() method do?',
-            options: ['Creates array with elements that pass a test', 'Filters out duplicates', 'Sorts an array', 'Removes elements'],
-            correctAnswer: 'Creates array with elements that pass a test',
-            explanation: 'The filter() method creates a new array with elements that satisfy a condition.',
-            difficulty: 'medium',
-          },
-          {
-            id: '9',
-            question: 'What is the length of an array?',
-            options: ['array.length', 'array.size', 'array.count', 'array.len'],
-            correctAnswer: 'array.length',
+            question: 'What is the length property of an array?',
+            options: [
+              'Returns the number of elements in the array',
+              'Returns the size in bytes',
+              'Returns the last element',
+              'Returns the first element'
+            ],
+            correctAnswer: 'Returns the number of elements in the array',
             explanation: 'The length property returns the number of elements in an array.',
-            difficulty: 'easy',
-          },
-          {
-            id: '10',
-            question: 'What does the spread operator (...) do?',
-            options: ['Expands an array or object into individual elements', 'Multiplies values', 'Adds elements', 'Removes elements'],
-            correctAnswer: 'Expands an array or object into individual elements',
-            explanation: 'The spread operator (...) allows iterables to be expanded in places.',
-            difficulty: 'medium',
-          },
-        ],
-      },
-    ],
+            difficulty: 'easy'
+          }
+        ]
+      }
+    ]
   },
-  'Python': {
+  Python: {
     topics: [
       {
         name: 'Python Basics',
         questions: [
           {
             id: '1',
-            question: 'What is Python used for?',
-            options: ['General-purpose programming', 'Web design only', 'Database management only', 'Game development only'],
-            correctAnswer: 'General-purpose programming',
-            explanation: 'Python is a versatile language used for web development, data science, AI, automation, and more.',
-            difficulty: 'easy',
+            question: 'What is the correct way to create a variable in Python?',
+            options: [
+              'name = "John"',
+              'String name = "John"',
+              'var name = "John"',
+              'name := "John"'
+            ],
+            correctAnswer: 'name = "John"',
+            explanation: 'Python uses simple assignment syntax. Variable types are inferred from the assigned value.',
+            difficulty: 'easy'
           },
           {
             id: '2',
-            question: 'How do you create a variable in Python?',
-            options: ['variable = value', 'var variable = value', 'variable: value', 'set variable value'],
-            correctAnswer: 'variable = value',
-            explanation: 'In Python, variables are created by assigning values using the = operator.',
-            difficulty: 'easy',
+            question: 'Which data type is used for text in Python?',
+            options: [
+              'str',
+              'string',
+              'text',
+              'char'
+            ],
+            correctAnswer: 'str',
+            explanation: 'In Python, the str data type is used for text/strings.',
+            difficulty: 'easy'
           },
           {
             id: '3',
-            question: 'What is the correct syntax for a Python function?',
-            options: ['def function_name():', 'function function_name():', 'func function_name():', 'function: function_name()'],
-            correctAnswer: 'def function_name():',
-            explanation: 'Python functions are defined using the def keyword.',
-            difficulty: 'easy',
+            question: 'How do you create a list in Python?',
+            options: [
+              'my_list = [1, 2, 3]',
+              'my_list = (1, 2, 3)',
+              'my_list = {1, 2, 3}',
+              'my_list = <1, 2, 3>'
+            ],
+            correctAnswer: 'my_list = [1, 2, 3]',
+            explanation: 'Lists in Python are created using square brackets [].',
+            difficulty: 'easy'
           },
           {
             id: '4',
-            question: 'Which data type stores text?',
-            options: ['string (str)', 'text', 'str', 'String'],
-            correctAnswer: 'string (str)',
-            explanation: 'In Python, text is stored in the string data type, abbreviated as str.',
-            difficulty: 'easy',
+            question: 'What does len() function do in Python?',
+            options: [
+              'Returns the length/number of items',
+              'Creates a list',
+              'Deletes elements',
+              'Converts to integer'
+            ],
+            correctAnswer: 'Returns the length/number of items',
+            explanation: 'The len() function returns the number of items in a sequence (string, list, tuple, etc.).',
+            difficulty: 'easy'
           },
           {
             id: '5',
-            question: 'How do you create a list in Python?',
-            options: ['[1, 2, 3]', '(1, 2, 3)', '{1, 2, 3}', '<1, 2, 3>'],
-            correctAnswer: '[1, 2, 3]',
-            explanation: 'Lists in Python are created using square brackets [].',
-            difficulty: 'easy',
-          },
-          {
-            id: '6',
-            question: 'What is the correct way to create a comment in Python?',
-            options: ['# comment', '// comment', '/* comment */', '-- comment'],
-            correctAnswer: '# comment',
-            explanation: 'Python comments are created using the # symbol.',
-            difficulty: 'easy',
-          },
-          {
-            id: '7',
-            question: 'What is indentation used for in Python?',
-            options: ['Defining code blocks', 'Making code readable', 'Adding spacing', 'Creating comments'],
-            correctAnswer: 'Defining code blocks',
-            explanation: 'Indentation is mandatory in Python and defines code blocks like functions and loops.',
-            difficulty: 'easy',
-          },
-          {
-            id: '8',
-            question: 'How do you check the type of a variable?',
-            options: ['type(variable)', 'variable.type()', 'typeof(variable)', 'variable::type()'],
-            correctAnswer: 'type(variable)',
-            explanation: 'The type() function returns the type of a variable.',
-            difficulty: 'easy',
-          },
-          {
-            id: '9',
-            question: 'What is a tuple in Python?',
-            options: ['An immutable sequence', 'A mutable list', 'A dictionary', 'A set of values'],
-            correctAnswer: 'An immutable sequence',
-            explanation: 'A tuple is an immutable sequence created using parentheses (1, 2, 3).',
-            difficulty: 'medium',
-          },
-          {
-            id: '10',
-            question: 'What is a dictionary in Python?',
-            options: ['A collection of key-value pairs', 'A list of words', 'A set of numbers', 'An ordered sequence'],
-            correctAnswer: 'A collection of key-value pairs',
-            explanation: 'A dictionary stores data as key-value pairs and is created using {key: value}.',
-            difficulty: 'medium',
-          },
-        ],
+            question: 'How do you create a dictionary in Python?',
+            options: [
+              'my_dict = {"key": "value"}',
+              'my_dict = ["key", "value"]',
+              'my_dict = ("key", "value")',
+              'my_dict = <"key": "value">'
+            ],
+            correctAnswer: 'my_dict = {"key": "value"}',
+            explanation: 'Dictionaries in Python are created using curly braces {} with key-value pairs.',
+            difficulty: 'medium'
+          }
+        ]
       },
       {
         name: 'Control Flow',
@@ -616,176 +549,146 @@ const quizData = {
           {
             id: '1',
             question: 'What is the correct syntax for an if statement in Python?',
-            options: ['if condition:', 'if(condition)', 'if condition then:', 'if: condition'],
-            correctAnswer: 'if condition:',
-            explanation: 'Python if statements use the syntax: if condition:',
-            difficulty: 'easy',
+            options: [
+              'if condition: statement',
+              'if (condition) { statement }',
+              'if condition then statement',
+              'if condition => statement'
+            ],
+            correctAnswer: 'if condition: statement',
+            explanation: 'Python uses colon (:) and indentation for if statements, not braces.',
+            difficulty: 'easy'
           },
           {
             id: '2',
-            question: 'How do you write an else statement in Python?',
-            options: ['else:', 'else {', 'else:', '} else {'],
-            correctAnswer: 'else:',
-            explanation: 'Python else statements are written as: else:',
-            difficulty: 'easy',
+            question: 'How do you create a for loop in Python?',
+            options: [
+              'for item in iterable: statement',
+              'for item = 0 to 10 { statement }',
+              'for (item in iterable) statement',
+              'for item -> iterable: statement'
+            ],
+            correctAnswer: 'for item in iterable: statement',
+            explanation: 'Python uses "for item in iterable" syntax for loops.',
+            difficulty: 'easy'
           },
           {
             id: '3',
-            question: 'What is the syntax for a for loop in Python?',
-            options: ['for item in sequence:', 'for (item in sequence)', 'for item : sequence', 'for item to sequence'],
-            correctAnswer: 'for item in sequence:',
-            explanation: 'Python for loops use the syntax: for item in sequence:',
-            difficulty: 'easy',
+            question: 'What is the purpose of the elif statement?',
+            options: [
+              'To specify additional conditions after if',
+              'To create a loop',
+              'To define a function',
+              'To handle errors'
+            ],
+            correctAnswer: 'To specify additional conditions after if',
+            explanation: 'elif (else if) is used to check additional conditions when the if condition is false.',
+            difficulty: 'medium'
           },
           {
             id: '4',
-            question: 'What does the range() function do?',
-            options: ['Creates a sequence of numbers', 'Finds the range of values', 'Measures distance', 'Orders a list'],
-            correctAnswer: 'Creates a sequence of numbers',
-            explanation: 'The range() function generates a sequence of numbers.',
-            difficulty: 'easy',
+            question: 'How do you create a while loop in Python?',
+            options: [
+              'while condition: statement',
+              'while (condition) { statement }',
+              'while condition then statement',
+              'while condition => statement'
+            ],
+            correctAnswer: 'while condition: statement',
+            explanation: 'while loops in Python use the same syntax as if statements.',
+            difficulty: 'easy'
           },
           {
             id: '5',
-            question: 'What is a while loop?',
-            options: ['A loop that runs while a condition is true', 'A loop that runs once', 'A loop that waits', 'A nested loop'],
-            correctAnswer: 'A loop that runs while a condition is true',
-            explanation: 'A while loop continues executing as long as the condition is true.',
-            difficulty: 'easy',
-          },
-          {
-            id: '6',
             question: 'What does the break statement do?',
-            options: ['Exits the loop', 'Pauses the loop', 'Restarts the loop', 'Skips an iteration'],
-            correctAnswer: 'Exits the loop',
+            options: [
+              'Exits the loop immediately',
+              'Pauses the loop',
+              'Restarts the loop',
+              'Skips one iteration'
+            ],
+            correctAnswer: 'Exits the loop immediately',
             explanation: 'The break statement terminates the current loop.',
-            difficulty: 'easy',
-          },
-          {
-            id: '7',
-            question: 'What does the continue statement do?',
-            options: ['Skips the current iteration', 'Exits the loop', 'Restarts from beginning', 'Pauses execution'],
-            correctAnswer: 'Skips the current iteration',
-            explanation: 'The continue statement skips the rest of the current iteration and moves to the next.',
-            difficulty: 'easy',
-          },
-          {
-            id: '8',
-            question: 'What is an elif statement?',
-            options: ['else if statement', 'empty if', 'element if', 'exit if'],
-            correctAnswer: 'else if statement',
-            explanation: 'elif is Python\'s way of writing "else if" for multiple conditions.',
-            difficulty: 'easy',
-          },
-          {
-            id: '9',
-            question: 'How do you compare if two values are equal in Python?',
-            options: ['==', '=', '===', '!='],
-            correctAnswer: '==',
-            explanation: 'The == operator compares if two values are equal.',
-            difficulty: 'easy',
-          },
-          {
-            id: '10',
-            question: 'What does the "in" operator do?',
-            options: ['Checks if value exists in sequence', 'Adds to sequence', 'Removes from sequence', 'Imports module'],
-            correctAnswer: 'Checks if value exists in sequence',
-            explanation: 'The "in" operator checks if a value exists in a sequence.',
-            difficulty: 'medium',
-          },
-        ],
-      },
-    ],
+            difficulty: 'medium'
+          }
+        ]
+      }
+    ]
   },
-  'Java': {
+  Java: {
     topics: [
       {
         name: 'Java Basics',
         questions: [
           {
             id: '1',
-            question: 'What does JVM stand for?',
-            options: ['Java Virtual Machine', 'Java Variable Method', 'Java Visual Module', 'Java Vector Manager'],
-            correctAnswer: 'Java Virtual Machine',
-            explanation: 'JVM is the Java Virtual Machine that executes Java bytecode.',
-            difficulty: 'easy',
+            question: 'What is Java primarily used for?',
+            options: [
+              'Building robust, platform-independent applications',
+              'Creating websites only',
+              'Managing databases only',
+              'Creating graphics only'
+            ],
+            correctAnswer: 'Building robust, platform-independent applications',
+            explanation: 'Java is known for its "write once, run anywhere" capability due to the JVM.',
+            difficulty: 'easy'
           },
           {
             id: '2',
-            question: 'What is the entry point of a Java program?',
-            options: ['main() method', 'start() method', 'run() method', 'init() method'],
-            correctAnswer: 'main() method',
-            explanation: 'The main() method is the entry point where Java program execution begins.',
-            difficulty: 'easy',
+            question: 'What does JVM stand for?',
+            options: [
+              'Java Virtual Machine',
+              'Java Variable Manager',
+              'Java Visual Module',
+              'JavaScript Virtual Machine'
+            ],
+            correctAnswer: 'Java Virtual Machine',
+            explanation: 'JVM is the Java Virtual Machine that executes Java bytecode.',
+            difficulty: 'easy'
           },
           {
             id: '3',
-            question: 'How do you create a class in Java?',
-            options: ['public class ClassName { }', 'class ClassName { }', 'new class ClassName { }', 'define class ClassName { }'],
-            correctAnswer: 'public class ClassName { }',
-            explanation: 'Classes in Java are created using the class keyword.',
-            difficulty: 'easy',
+            question: 'How do you declare a variable in Java?',
+            options: [
+              'type variableName = value;',
+              'var: type variableName;',
+              'variableName = value;',
+              'declare variableName type;'
+            ],
+            correctAnswer: 'type variableName = value;',
+            explanation: 'Java requires explicit type declaration before variable assignment.',
+            difficulty: 'easy'
           },
           {
             id: '4',
-            question: 'What is a constructor in Java?',
-            options: ['A method that initializes objects', 'A method that creates classes', 'A method that starts execution', 'A method that ends program'],
-            correctAnswer: 'A method that initializes objects',
-            explanation: 'A constructor is a special method used to initialize objects of a class.',
-            difficulty: 'medium',
+            question: 'What is the entry point of a Java program?',
+            options: [
+              'public static void main(String[] args)',
+              'public void start()',
+              'public static main()',
+              'public void begin(String[] args)'
+            ],
+            correctAnswer: 'public static void main(String[] args)',
+            explanation: 'The main method is the entry point where Java programs start execution.',
+            difficulty: 'medium'
           },
           {
             id: '5',
-            question: 'What is a package in Java?',
-            options: ['A namespace that organizes classes', 'A collection of methods', 'A file containing code', 'A data structure'],
-            correctAnswer: 'A namespace that organizes classes',
-            explanation: 'Packages organize Java classes into namespaces.',
-            difficulty: 'medium',
-          },
-          {
-            id: '6',
-            question: 'What does the "new" keyword do?',
-            options: ['Creates an instance of a class', 'Declares a variable', 'Imports a package', 'Defines a method'],
-            correctAnswer: 'Creates an instance of a class',
-            explanation: 'The new keyword creates a new instance (object) of a class.',
-            difficulty: 'easy',
-          },
-          {
-            id: '7',
-            question: 'What is the difference between public and private?',
-            options: ['public is accessible everywhere, private only within class', 'They are the same', 'private is faster', 'public is safer'],
-            correctAnswer: 'public is accessible everywhere, private only within class',
-            explanation: 'public members are accessible from anywhere, private only from within the class.',
-            difficulty: 'medium',
-          },
-          {
-            id: '8',
-            question: 'What is inheritance in Java?',
-            options: ['One class inheriting properties from another', 'Creating objects', 'Accessing variables', 'Calling methods'],
-            correctAnswer: 'One class inheriting properties from another',
-            explanation: 'Inheritance allows a class to inherit properties and methods from another class.',
-            difficulty: 'medium',
-          },
-          {
-            id: '9',
-            question: 'What keyword is used for inheritance in Java?',
-            options: ['extends', 'inherits', 'import', 'implements'],
-            correctAnswer: 'extends',
-            explanation: 'The extends keyword is used to inherit from a class.',
-            difficulty: 'easy',
-          },
-          {
-            id: '10',
-            question: 'What is polymorphism?',
-            options: ['Ability to take multiple forms', 'Multiple classes', 'Many methods', 'Data structure'],
-            correctAnswer: 'Ability to take multiple forms',
-            explanation: 'Polymorphism allows objects to take multiple forms or implement multiple interfaces.',
-            difficulty: 'hard',
-          },
-        ],
-      },
-    ],
-  },
+            question: 'Is Java an object-oriented language?',
+            options: [
+              'Yes, Java is purely object-oriented',
+              'No, Java is procedural',
+              'Java supports both OOP and procedural',
+              'Java is functional only'
+            ],
+            correctAnswer: 'Yes, Java is purely object-oriented',
+            explanation: 'Java is designed as a pure object-oriented programming language.',
+            difficulty: 'medium'
+          }
+        ]
+      }
+    ]
+  }
 };
 
 module.exports = quizData;
